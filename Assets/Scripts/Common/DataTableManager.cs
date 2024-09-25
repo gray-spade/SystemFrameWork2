@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class DataTableManager : SingetonBehaviour<DataTableManager>
+public class DataTableManager : SingletonBehaviour<DataTableManager>
 {
 
     private const string DATA_PATH = "DataTable";

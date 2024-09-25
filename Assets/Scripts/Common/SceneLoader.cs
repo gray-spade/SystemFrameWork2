@@ -11,7 +11,7 @@ public enum SceneType {
 }
 
 
-public class SceneLoader : SingetonBehaviour<SceneLoader>
+public class SceneLoader : SingletonBehaviour<SceneLoader>
 {
     public void LoadScene(SceneType sceneType) {
         Logger.Log($"{sceneType} scene Loading");

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserDataManager : SingetonBehaviour<UserDataManager>
+public class UserDataManager : SingletonBehaviour<UserDataManager>
 {
     public bool ExistsSaveData { get; private set; } = false;
 
