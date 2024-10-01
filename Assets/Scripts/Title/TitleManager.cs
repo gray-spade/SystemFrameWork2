@@ -31,11 +31,17 @@ public class TitleManager : MonoBehaviour
             UserDataManager.Instance.SaveUserData();
         }
         Logger.Log(DataTableManager.Instance.name);
-        ChapterData chapterData1 = DataTableManager.Instance.GetChapterData(10);
-        ChapterData chapterData2 = DataTableManager.Instance.GetChapterData(50);
-
-        return;
-
+        /*
+        var confirmUIData = new ConfirmUIData();
+        confirmUIData.ConfirmType = ConfirmType.OK;
+        confirmUIData.TitleTxt = "UI test";
+        confirmUIData.DescTxt = "this is UI test";
+        confirmUIData.OKBtnTxt = "Ok";
+        confirmUIData.OnclickOKButton = () => Logger.Log("test");
+        UIManager.Instance.OpenUI<ConfirmUI>(confirmUIData);
+        */
+        AudioManager.Instance.OnLoadUserData();
+        UIManager.Instance.EnableStatsUI(false);
         StartCoroutine(LoadGameCo());
     }
 

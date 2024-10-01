@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UserDataManager : SingletonBehaviour<UserDataManager>
@@ -47,16 +48,11 @@ public class UserDataManager : SingletonBehaviour<UserDataManager>
 
         UserDataList.Add(new UserSettingData());
         UserDataList.Add(new UserGoodsData());
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        UserDataList.Add(new UserInventoryData());
     }
 
-    // Update is called once per frame
-    void Update()
+    public T GetUserData<T>() where T : class, IUserData
     {
-        
+        return UserDataList.OfType<T>().FirstOrDefault();
     }
 }

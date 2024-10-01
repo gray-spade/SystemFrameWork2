@@ -119,6 +119,17 @@ public class AudioManager : SingletonBehaviour<AudioManager>
         m_CurrentBGMSource = m_BGMPlayer[bgm];
         m_CurrentBGMSource.Play();
     }
+
+    public void OnLoadUserData() {
+        var userSettingData = UserDataManager.Instance.GetUserData<UserSettingData>();
+        if (userSettingData != null)
+        {
+            if (!userSettingData.Sound) {
+                Mute();
+            }
+        }
+    }
+
     //BGM 일시정지
     public void PauseBGM()
     {
